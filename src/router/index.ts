@@ -18,9 +18,25 @@ const routes = [
   },
   {
     path: "/todos",
-    name: "TodoList",
+    name: "Todos",
     component: () =>
-      import(/* webpackChunkName: "todo-list" */ "../views/TodoList.vue"),
+      import(/* webpackChunkName: "todos-index" */ "../views/Todos/index.vue"),
+    children: [
+      {
+        path: "",
+        name: "List",
+        component: () =>
+          import(
+            /* webpackChunkName: "todos-list" */ "../views/Todos/List.vue"
+          ),
+      },
+      {
+        path: "new",
+        name: "TodosNew",
+        component: () =>
+          import(/* webpackChunkName: "todos-new" */ "../views/Todos/New.vue"),
+      },
+    ],
   },
 ];
 
