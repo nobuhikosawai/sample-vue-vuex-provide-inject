@@ -1,12 +1,12 @@
-import { createStore } from 'vuex'
+import { createStore } from "vuex";
+import { todos, State as TodoState } from "./todos";
+
+export type RootState = {
+  todos: TodoState;
+};
 
 export default createStore({
-  state: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
   modules: {
-  }
-})
+    todos,
+  },
+});

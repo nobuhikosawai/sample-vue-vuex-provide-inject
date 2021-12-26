@@ -38,6 +38,32 @@ const routes = [
       },
     ],
   },
+  {
+    path: "/todos2",
+    name: "Todos2",
+    component: () =>
+      import(
+        /* webpackChunkName: "todos-index2" */ "../views/Todos2/index.vue"
+      ),
+    children: [
+      {
+        path: "",
+        name: "List2",
+        component: () =>
+          import(
+            /* webpackChunkName: "todos-list2" */ "../views/Todos2/List.vue"
+          ),
+      },
+      {
+        path: "new",
+        name: "TodosNew2",
+        component: () =>
+          import(
+            /* webpackChunkName: "todos-new2" */ "../views/Todos2/New.vue"
+          ),
+      },
+    ],
+  },
 ];
 
 const router = createRouter({
